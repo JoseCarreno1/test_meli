@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """
+Autor: Jose carreño
+Para: MeLi
+Fecha: Agosto de 2025
+---------------------
 Genera un dataset de entrenamiento para el carrusel (MeLi).
 
 Entradas (mismo directorio del script):
