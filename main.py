@@ -7,9 +7,9 @@ Fecha: Agosto de 2025
 Genera un dataset de entrenamiento para el carrusel (MeLi).
 
 Entradas (mismo directorio del script):
-- prints.json  (JSON Lines) → impresiones del carrusel.
-- taps.json    (JSON Lines) → taps o clics en el carrusel.
-- pays.csv     (CSV)        → pagos realizados asociados a value_prop.
+- prints.json  (JSON Lines) - impresiones del carrusel.
+- taps.json    (JSON Lines) - taps o clics en el carrusel.
+- pays.csv     (CSV)        - pagos realizados asociados a value_prop.
 
 Salida:
 - dataset_ready.csv → impresiones de la última semana + métricas históricas previas.
@@ -149,7 +149,7 @@ def construir_dataset(dir_entrada: Path, salida_csv: Path) -> None:
         raise ValueError("Existen montos no numéricos en 'total' de pays.csv")
 
     if prints.empty:
-        # No hay impresiones → exportar CSV vacío con cabeceras esperadas
+        # No hay impresiones - exportar CSV vacío con cabeceras esperadas
         logging.warning("No se encontraron impresiones en 'prints'. Se generará un CSV vacío con cabeceras.")
         columnas = ["day", "user_id", "value_prop", "position", "clicked",
                     "prints_prev_3w", "taps_prev_3w", "payments_prev_3w", "amount_prev_3w"]
